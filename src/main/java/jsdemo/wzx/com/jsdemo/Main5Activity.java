@@ -55,7 +55,7 @@ public class Main5Activity extends AppCompatActivity {
             }
         });
     }
-
+    //
     private void initView() {
         webView5 = (WebView) findViewById(R.id.webView5);
         swrl = (SwipeRefreshLayout) findViewById(R.id.swrl);
