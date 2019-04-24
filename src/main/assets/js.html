@@ -1,0 +1,32 @@
+<html>
+<body>
+<script type="text/javascript">
+<!--document.write("<h1>Hello World!</h1>")-->
+function func1(str){
+      alert("Android调用了JS的func1方法--"+str);
+      return "jsjs";
+}
+function clickBtn(){
+    <!--通过这个可以给安卓传值  callByJS是接受值的方法名-->
+    androidObj.callByJS("JS调用了Android的方法");
+}
+function clickBtn2(){
+<!--通过这个可以给安卓传值  location相当于拦截信息 如果一致则拦截-->
+    document.location = "callandroid://test?arg1=abc&arg2=202";
+}
+
+function clickBtn3(){
+    <!--这边会被拦截，可以取得返回值  与方法二大同小异-->
+    var str = prompt("callandroid://test?arg1=btn3");
+    alert(str);
+}
+</script>
+<button type="button" id="btn" onclick="clickBtn()">点击调用Android代码</button>
+<Br/>
+<Br/>
+<button type="button" id="btn2" onclick="clickBtn2()">通过拦截调用Android代码</button>
+<Br/>
+<Br/>
+<button type="button" id="btn3" onclick="clickBtn3()">拦截prompt</button>
+</body>
+</html>
